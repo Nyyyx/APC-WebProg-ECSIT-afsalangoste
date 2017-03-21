@@ -4,14 +4,6 @@
  
 <?php echo form_open('news/create'); ?>    
     <table>
-        <tr>
-            <td><label for="title">Title</label></td>
-            <td><input type="input" name="title" size="50" /></td>
-        </tr>
-        <tr>
-            <td><label for="text">Text</label></td>
-            <td><textarea name="text" rows="10" cols="40"></textarea></td>
-        </tr>
 		 <tr>
             <td><label for="fullName">Full Name</label></td>
             <td><input type="text" name="fullName" size="32" /></td>
@@ -28,17 +20,19 @@
             <td><label for="address">Home Address</label></td>
             <td><input type="text" name="address" size="36" /></td>
         </tr>
-		 <tr>
+		<tr>
             <td><label for="gender">Gender</label></td>
-            <td><input type="text" name="gender" size="6" /></td>
+            <td><input type="radio" name="gender" value="Female" required>Female
+				<input type="radio" name="gender" value="Male" required>Male 
+			</td>
         </tr>
 		 <tr>
             <td><label for="cellphoneNumber">Cellphone Number</label></td>
-            <td><input type="tel" name="cellphoneNumber" size="11" /></td>
+            <td><input type="number" name="cellphoneNumber" size="11"/></td>
         </tr>
 		 <tr>
             <td><label for="comments">Comments</label></td>
-            <td><input type="text" name="comments" size="300" /></td>
+            <td><textarea name="comments" rows="10" cols="40" size="300"></textarea></td>
         </tr>
         <tr>
             <td></td>

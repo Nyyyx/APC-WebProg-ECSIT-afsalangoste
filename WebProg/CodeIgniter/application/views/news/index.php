@@ -1,10 +1,7 @@
 <h2><?php echo $title; ?></h2>
  
 <table border='1' cellpadding='4'>
-    <tr>
-        <td><strong>Title</strong></td>
-        <td><strong>Content</strong></td>
-        
+    <tr>       
 		<td><strong>Full Name</strong></td>
         <td><strong>Nickname</strong></td>
         <td><strong>Email</strong></td>
@@ -16,8 +13,6 @@
     </tr>
 <?php foreach ($news as $news_item): ?>
         <tr>
-            <td><?php echo $news_item['title']; ?></td>
-            <td><?php echo $news_item['text']; ?></td>
 			<td><?php echo $news_item['fullName']; ?></td>
 			<td><?php echo $news_item['nickName']; ?></td>
 			<td><?php echo $news_item['email']; ?></td>
