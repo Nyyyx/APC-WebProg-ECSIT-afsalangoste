@@ -1,1 +1,1 @@
-<p>News added successfully!</p>
+<p>User added successfully!</p>

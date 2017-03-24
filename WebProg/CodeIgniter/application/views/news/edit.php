@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" name="submit" value="Edit news item" /></td>
+            <td><input type="submit" name="submit" value="Edit user profile" /></td>
         </tr>
     </table>
 </form>
