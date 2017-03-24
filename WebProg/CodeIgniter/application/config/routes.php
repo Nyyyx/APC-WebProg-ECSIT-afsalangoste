@@ -61,3 +61,5 @@ $route['news/edit/(:any)'] = 'news/edit/$1';
 $route['news/view/(:any)'] = 'news/view/$1';
 $route['news/(:any)'] = 'news/view/$1';
 
+$route['profiler'] = "Profiler_controller"; 
+//$route['profiler/disable'] = "Profiler_controller/disable"
