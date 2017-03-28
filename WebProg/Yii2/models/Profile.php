@@ -8,9 +8,6 @@ use Yii;
  * This is the model class for table "profile".
  *
  * @property integer $id
- * @property string $title
- * @property string $slug
- * @property string $text
  * @property string $fullName
  * @property string $nickName
  * @property string $email
@@ -18,6 +15,8 @@ use Yii;
  * @property string $gender
  * @property string $cellphoneNumber
  * @property string $comments
+ *
+ * @property Trivia[] $trivias
  */
 class Profile extends \yii\db\ActiveRecord
 {
@@ -35,12 +34,12 @@ class Profile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'title', 'slug', 'text', 'fullName', 'nickName', 'email', 'address', 'gender', 'cellphoneNumber'], 'required'],
-            [['id', 'cellphoneNumber'], 'integer'],
-            [['text', 'nickName', 'gender'], 'string'],
-            [['title', 'slug'], 'string', 'max' => 128],
+            [['fullName', 'nickName', 'email', 'address', 'gender', 'cellphoneNumber'], 'required'],
+            [['nickName'], 'string'],
+            [['cellphoneNumber'], 'integer'],
             [['fullName', 'email'], 'string', 'max' => 32],
             [['address'], 'string', 'max' => 64],
+            [['gender'], 'string', 'max' => 6],
             [['comments'], 'string', 'max' => 300],
         ];
     }
@@ -52,9 +51,6 @@ class Profile extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'slug' => 'Slug',
-            'text' => 'Text',
             'fullName' => 'Full Name',
             'nickName' => 'Nick Name',
             'email' => 'Email',
@@ -63,5 +59,13 @@ class Profile extends \yii\db\ActiveRecord
             'cellphoneNumber' => 'Cellphone Number',
             'comments' => 'Comments',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTrivias()
+    {
+        return $this->hasMany(Trivia::className(), ['profileId' => 'id']);
     }
 }
