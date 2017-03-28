@@ -1,3 +1,5 @@
+<link rel = "stylesheet" type = "text/css"
+href = "<?php echo base_url(); ?>css/style.css">
 <h2><?php echo $title; ?></h2>
  
 <?php echo validation_errors(); ?>

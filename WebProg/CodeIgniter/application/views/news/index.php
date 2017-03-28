@@ -1,13 +1,6 @@
-<!DOCTYPE html> 
-<html lang = "en">
- 
-   <head> 
-      <meta charset = "utf-8"> 
-      <link rel = "stylesheet" type = "text/css" 
-         href = "<?php echo base_url(); ?>public/css/style.css"> 
-   </head>
-</html>
-
+<link rel = "stylesheet" type = "text/css"
+href = "<?php echo base_url(); ?>css/style.css"> 
+    
 <h2><?php echo $title; ?></h2>
  
 <table border='1' cellpadding='4'>
