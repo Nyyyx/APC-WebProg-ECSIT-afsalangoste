@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\models\Profile;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Trivia */
@@ -31,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'question',
             'answer',
-            'profileId',
+            'profile.fullName'
         ],
     ]) ?>
 

@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Profile;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Trivia */
@@ -16,12 +18,20 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'answer')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'profileId')->textInput() ?>
+    <?= 
+		$form->field($model, 'profileId')->dropDownList(
+            ArrayHelper::map(Profile::find()->all(), 'id', 'fullName')
+            )
+	?>
+	
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
+	
+	   
+    
 
 </div>
