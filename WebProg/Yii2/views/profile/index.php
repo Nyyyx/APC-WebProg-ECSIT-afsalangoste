@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'fullName',
-            'nickName:ntext',
+            'nickName',
             'email:email',
             'address',
             // 'gender',

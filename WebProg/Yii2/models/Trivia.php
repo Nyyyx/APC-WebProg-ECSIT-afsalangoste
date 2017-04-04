@@ -11,6 +11,8 @@ use Yii;
  * @property string $question
  * @property string $answer
  * @property integer $profileId
+ *
+ * @property Profile $profile
  */
 class Trivia extends \yii\db\ActiveRecord
 {
@@ -31,6 +33,7 @@ class Trivia extends \yii\db\ActiveRecord
             [['question', 'answer', 'profileId'], 'required'],
             [['profileId'], 'integer'],
             [['question', 'answer'], 'string', 'max' => 100],
+            [['profileId'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['profileId' => 'id']],
         ];
     }
 
@@ -45,5 +48,13 @@ class Trivia extends \yii\db\ActiveRecord
             'answer' => 'Answer',
             'profileId' => 'Profile ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProfile()
+    {
+        return $this->hasOne(Profile::className(), ['id' => 'profileId']);
     }
 }
