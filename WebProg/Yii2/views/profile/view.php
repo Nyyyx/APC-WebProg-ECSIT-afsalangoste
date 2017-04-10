@@ -2,11 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\models\Trivia;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Profile */
 
-$this->title = $model->id;
+$this->title = $model->fullName;
 $this->params['breadcrumbs'][] = ['label' => 'Profiles', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -38,6 +39,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'comments',
         ],
     ]) ?>
+	
+<h1>Trivias</h1>
 
+	
 
 </div>

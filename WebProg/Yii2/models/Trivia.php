@@ -47,6 +47,7 @@ class Trivia extends \yii\db\ActiveRecord
             'question' => 'Question',
             'answer' => 'Answer',
             'profileId' => 'Profile ID',
+			'profile.fullName' => 'Trivia Maker',
         ];
     }
 
@@ -57,4 +58,5 @@ class Trivia extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Profile::className(), ['id' => 'profileId']);
     }
+
 }

@@ -68,4 +68,5 @@ class Profile extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Trivia::className(), ['profileId' => 'id']);
     }
+	
 }
